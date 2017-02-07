@@ -10,11 +10,15 @@
 <body>
 	<h1>Lee HanYeong's Blog!</h1>
 	<h3>Post list</h3>
-	{% for post in post_list %}
-	<div>
-		<h4>{{ post.title }}</h4>
-		<p>{{ post.content }}</p>
-	</div>
-	{% endfor %}
+	{% if post_list %}
+		{% for post in post_list %}
+		<div>
+			<h4>{{ post.title }}</h4>
+			<p>{{ post.content|truncatechars:200 }}</p>
+		</div>
+		{% endfor %}
+	{% else %}
+	<p>No posts</p>
+	{% endif %}
 </body>
 </html>
