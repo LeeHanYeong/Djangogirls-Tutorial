@@ -3,6 +3,7 @@
 {% block subtitle %}Post list{% endblock %}
 
 {% block content %}
+	<a href="{% url 'post_add' %}">Write Post</a>
 	{% if post_list %}
 		{% for post in post_list %}
 		<div>

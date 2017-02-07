@@ -1,0 +1,29 @@
+<!--
+	view
+		def post_add(request)
+
+	url
+		post/add/, name='post_add'
+
+	post_list.html에서 'Write Post'버튼을 만들고 해당 버튼에 post_add로 가는 링크 생성
+-->
+{% extends 'blog/base.html' %}
+
+{% block subtitle %}Post add{% endblock %}
+
+{% block content %}
+<form action="" method="POST">{% csrf_token %}
+	<fieldset>
+		<legend>Add post</legend>
+		<div>
+			<label for="">Title</label>
+			<input name="input_title" type="text">
+		</div>
+		<div>
+			<label for="">Content</label>
+			<textarea name="input_content" id="" cols="30" rows="10"></textarea>
+		</div>
+		<button type="submit">Write</button>
+	</fieldset>
+</form>
+{% endblock %}
