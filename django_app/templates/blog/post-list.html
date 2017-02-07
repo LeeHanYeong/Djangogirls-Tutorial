@@ -13,7 +13,7 @@
 	{% if post_list %}
 		{% for post in post_list %}
 		<div>
-			<h4>{{ post.title }}</h4>
+			<h4><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></h4>
 			<p>{{ post.content|truncatechars:200 }}</p>
 		</div>
 		{% endfor %}
